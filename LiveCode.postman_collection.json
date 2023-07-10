@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "d523585e-2f13-4726-b815-3b095422aa3d",
+		"name": "LiveCode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SaveBatch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"addresses\": [\r\n    {\r\n      \"number\": \"274\",\r\n      \"zipCode\": \"06250080\",\r\n      \"version\": 1\r\n    },\r\n    {\r\n      \"number\": \"274\",\r\n      \"zipCode\": \"06240010\",\r\n      \"version\": 1\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/address/create_batch",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"create_batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveAddress",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"number\": \"274\",\r\n    \"zipCode\": \"06250080\",\r\n    \"version\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/address",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByZipCode",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/address/06240010",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"address",
+						"06240010"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
